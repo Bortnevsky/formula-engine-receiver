@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  excel-reader:
+    build: ./services/excel_reader
+    ports:
+      - "8001:8001"
+    restart: unless-stopped
+    
+  static-refs:
+    build: ./services/static_refs
+    ports:
+      - "8002:8002"
+    restart: unless-stopped
+    
+  dag-builder:
+    build: ./services/dag_builder
+    ports:
+      - "8003:8003"
+    restart: unless-stopped
